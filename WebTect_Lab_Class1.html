@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Class 2 Web Technologies</title>
+    <style>
+        th, td {
+            border    : 1px solid black;
+            padding   : 20px;
+            text-align: Left;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Input</th>
+    </tr>
+    <tr>
+        <td><label for  = "fname">First Name:</label></td>
+        <td><input type = "text" id = "fname" name = "fname" required></td>
+    </tr>
+    <tr>
+        <td><label for  = "lname">Last Name:</label></td>
+        <td><input type = "text" id = "lname" name = "lname" required></td>
+    </tr>
+    <tr>
+        <td><label for  = "userid">User ID:</label></td>
+        <td><input type = "text" id = "userid" name = "userid" required></td>
+    </tr>
+    <tr>
+        <td><label for  = "email">Email:</label></td>
+        <td><input type = "email" id = "email" name = "email" required></td>
+    </tr>
+    <tr>
+        <td><label for  = "password">Password:</label></td>
+        <td><input type = "password" id = "password" name = "password" required></td>
+    </tr>
+    <tr>
+        <td><label for  = "dob">Date of Birth:</label></td>
+        <td><input type = "date" id = "dob" name = "dob" required></td>
+    </tr>
+    <tr>
+        <td>Gender: </td>
+        <td>
+            <input type = "radio" name = "gender" value = "male" required> Male
+            <input type = "radio" name = "gender" value = "female"> Female
+            <input type = "radio" name = "gender" value = "other"> Other
+        </td>
+    </tr>
+    <tr>
+        <td>Skill/Hobbies: </td>
+        <td>
+            <input type = "checkbox" name = "skills" value = "sports"> Sports
+            <input type = "checkbox" name = "skills" value = "music"> Music
+            <input type = "checkbox" name = "skills" value = "reading"> Reading
+        </td>
+    </tr>
+    <tr>
+        <td><label for="department">Department:</label></td>
+        <td>
+            <select id="department" name="department">
+                <option value="cs">C.S.E</option>
+                <option value="ee">E.E.E</option>
+                <option value="me">B.B.A</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="address">Address:</label></td>
+        <td><textarea id="address" name="address" rows="3"></textarea></td>
+    </tr>
+    <tr>
+        <td><label for="image">Image Upload:</label></td>
+        <td><input type="file" id="image" name="image"></td>
+    </tr>
+</table>
+
+</body>
+</html>

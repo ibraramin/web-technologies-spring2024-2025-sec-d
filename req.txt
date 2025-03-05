@@ -1,0 +1,27 @@
+student registration form
+
+input tags: Type Name Value
+
+input fields 
+1. First Name
+2. Last Name
+3. User ID 
+4. Email 
+5. Password 
+6. DOB 
+7. Gender         // 3 Radio Name Same
+8. Skill/Hobbies  // Checkbox
+9. Department
+10. Address  // Text Area
+11. Image    // File 
+12. Button Label = Value
+13. Button (Submit)
+14. Button (Reset)
+
+Have to take a tables with 2 columns first column will have the labels and the other column will have the input fields
+
+
+
+
+
+
