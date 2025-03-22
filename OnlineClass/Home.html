@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Homepage</h1>
+
+    <p id="userInfo">Loading user info...</p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const username = params.get("username");
+        const password = params.get("password");
+
+        const userInfo = document.getElementById("userInfo");
+        if (username && password) {
+            userInfo.innerHTML = `Username: <b>${username}</b><br>Password: <b>${password}</b>`;
+        } else {
+            userInfo.innerHTML = "No user info found. Maybe you came here directly?";
+        }
+    </script>
+</body>
+</html>
