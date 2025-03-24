@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Input Validation</title>
+</head>
+<body>
+  <h3>Email: </h3>
+  <input type = "text" id = "emailInput" />
+  <br>
+  <br>
+  <button onclick = "validateEmail()">Submit</button>
+
+  <p id = "emailMessage"></p>
+
+  <script>
+    function validateEmail() {
+      const input = document.getElementById("emailInput").value.trim();
+      const message = document.getElementById("emailMessage");
+      message.textContent = "";
+
+      if (input.length === 0) {
+        message.textContent = "Email cannot be empty.";
+        return;
+      }
+
+      const atIndex = input.indexOf("@");
+      const lastAtIndex = input.lastIndexOf("@");
+
+      if (atIndex === -1 || atIndex !== lastAtIndex) {
+        message.textContent = "Email must contain exactly one '@'.";
+        return;
+      }
+
+      const localPart = input.slice(0, atIndex);
+      const domainPart = input.slice(atIndex + 1);
+
+      if (localPart.length === 0 || domainPart.length === 0) {
+        message.textContent = "Email must have text before and after '@'.";
+        return;
+      }
+
+      const dotIndex = domainPart.indexOf(".");
+      if (dotIndex === -1 || dotIndex === 0 || dotIndex === domainPart.length - 1) {
+        message.textContent = "Domain part must contain a dot in the correct position.";
+        return;
+      }
+
+      message.textContent = "Email is valid!";
+    }
+  </script>
+</body>
+</html>

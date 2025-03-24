@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User ID and Profile Picture Upload</title>
+</head>
+<body>
+
+  <fieldset style="width:320px;">
+    <legend>Profile Picture</legend>
+
+    <label for="userId"> User ID </label>
+    <input type="text" id="userId"><br><br>
+
+    <label for  = "profilePic">Picture:</label>
+    <input type = "file" id = "profilePic" accept = "image/*"><br>
+    
+    <hr>
+
+    <button onclick="validateForm()">Submit</button>
+
+    <p id="formMessage"></p>
+  </fieldset>
+
+  <script>
+    function validateForm() {
+      const userId = document.getElementById("userId").value.trim();
+      const profilePic = document.getElementById("profilePic").files;
+      const message = document.getElementById("formMessage");
+      message.textContent = "";
+
+      if (userId.length === 0) {
+        message.textContent = "User ID cannot be empty.";
+        return;
+      }
+
+      const num = Number(userId);
+      if (isNaN(num) || num <= 0) {
+        message.textContent = "User ID must be a positive number.";
+        return;
+      }
+
+      if (profilePic.length === 0) {
+        message.textContent = "Please select a profile picture.";
+        return;
+      }
+
+      message.textContent = "Form submitted successfully!";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text Input Validation</title>
+</head>
+<body>
+  <h3>Name:</h3>
+  <input type = "text" id = "textInput" />
+  <br>
+  <br>
+  <button onclick="validateInput()">Submit</button>
+
+  <p id="message"></p>
+
+  <script>
+    function validateInput() {
+      const input = document.getElementById("textInput").value.trim();
+      const message = document.getElementById("message");
+      message.textContent = "";
+
+      if (input.length === 0) {
+        message.textContent = "Input cannot be empty.";
+        return;
+      }
+
+      const firstChar = input[0];
+      if (!isLetter(firstChar)) {
+        message.textContent = "Input must start with a letter.";
+        return;
+      }
+
+      const words = input.split(" ").filter(w => w.length > 0);
+      if (words.length < 2) {
+        message.textContent = "Input must contain at least two words.";
+        return;
+      }
+
+      for (let i = 0; i < input.length; i++) {
+        const ch = input[i];
+        if (!isLetter(ch) && ch !== '.' && ch !== '-' && ch !== ' ') {
+          message.textContent = "Input can only contain letters, dots, dashes, or spaces.";
+          return;
+        }
+      }
+
+      message.textContent = "Input is valid!";
+    }
+
+    function isLetter(ch) {
+      const code = ch.charCodeAt(0);
+      return (code >= 65 && code <= 90) || (code >= 97 && code <= 122);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blood Group Selection</title>
+</head>
+<body>
+
+
+
+<label for="bloodGroup">Blood Group:</label>
+<select id="bloodGroup">
+    <option value="">--Select--</option>
+    <option value="A+">A+</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-">AB-</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+</select><br>
+<hr width="200px" align="left">
+<button onclick="validateBloodGroup()">Submit</button>
+
+<p id="bloodMessage"></p>
+
+  <script>
+    function validateBloodGroup() {
+      const bloodGroup = document.getElementById("bloodGroup").value;
+      const message = document.getElementById("bloodMessage");
+      message.textContent = "";
+
+      if (bloodGroup === "") {
+        message.textContent = "Please select a blood group.";
+      } else {
+        message.textContent = "Blood group selected: " + bloodGroup;
+      }
+    }
+  </script>
+
+</body>
+</html>

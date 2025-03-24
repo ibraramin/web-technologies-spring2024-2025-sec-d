@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date of Birth Validation</title>
+</head>
+<body>
+
+  <fieldset style = "width : 200px">
+    <legend> Date of Birth</legend>
+    <pre> dd       mm       yy</pre>
+
+    <input type="text" id="dayInput" size="2" /> /  
+    <input type="text" id="monthInput" size="2" /> /  
+    <input type="text" id="yearInput" size="4" />  
+    <hr>
+    <button onclick="validateDOB()">Submit</button>
+    
+    <p id = "dobMessage"></p>
+  </fieldset>
+  
+  <script>
+    function validateDOB() {
+      const day = document.getElementById("dayInput").value.trim();
+      const month = document.getElementById("monthInput").value.trim();
+      const year = document.getElementById("yearInput").value.trim();
+      const message = document.getElementById("dobMessage");
+      message.textContent = "";
+
+      if (!day || !month || !year) {
+        message.textContent = "All fields must be filled.";
+        return;
+      }
+
+      const dayNum = Number(day);
+      const monthNum = Number(month);
+      const yearNum = Number(year);
+
+      if (isNaN(dayNum) || isNaN(monthNum) || isNaN(yearNum)) {
+        message.textContent = "Day, Month, and Year must be numbers.";
+        return;
+      }
+
+      if (dayNum < 1 || dayNum > 31) {
+        message.textContent = "Day must be between 1 and 31.";
+        return;
+      }
+
+      if (monthNum < 1 || monthNum > 12) {
+        message.textContent = "Month must be between 1 and 12.";
+        return;
+      }
+
+      if (yearNum < 1900 || yearNum > 2016) {
+        message.textContent = "Year must be between 1900 and 2016.";
+        return;
+      }
+
+      message.textContent = "Date of Birth is valid!";
+    }
+  </script>
+
+</body>
+</html>

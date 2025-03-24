@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Degree Selection</title>
+</head>
+<body>
+
+  <fieldset style="width:200px;">
+    <legend> Degree </legend>
+    
+    <input type="checkbox" id="ssc" name="degree" value="SSC">
+    <label for="ssc">SSC</label>
+
+    <input type="checkbox" id="hsc" name="degree" value="HSC">
+    <label for="hsc">HSC</label>
+
+    <input type="checkbox" id="bsc" name="degree" value="BSC">
+    <label for="bsc">BSC</label><br>
+
+    <button onclick="validateDegrees()">Submit</button>
+
+    <p id="degreeMessage"></p>
+  </fieldset>
+
+  <script>
+    function validateDegrees() {
+      const checkboxes = document.getElementsByName("degree");
+      const message = document.getElementById("degreeMessage");
+      message.textContent = "";
+
+      let count = 0;
+      for (let i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+          count++;
+        }
+      }
+
+      if (count < 2) {
+        message.textContent = "Please select at least two degrees.";
+      } else {
+        message.textContent = "Degrees selected successfully!";
+      }
+    }
+  </script>
+</body>
+</html>
